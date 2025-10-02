@@ -24,6 +24,11 @@ flutter build web --release \
   --dart-define=SUPABASE_URL=$SUPABASE_URL \
   --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
   --dart-define=USDA_FOOD_DATA_API_KEY=$USDA_FOOD_DATA_API_KEY \
+  --dart-define=GOOGLE_WEB_CLIENT_ID=$GOOGLE_WEB_CLIENT_ID \
+  --dart-define=GOOGLE_ANDROID_CLIENT_ID=$GOOGLE_ANDROID_CLIENT_ID \
+  --dart-define=GOOGLE_IOS_CLIENT_ID=$GOOGLE_IOS_CLIENT_ID \
+  --dart-define=APPLE_CLIENT_ID=$APPLE_CLIENT_ID \
+  --dart-define=APPLE_SERVICE_ID=$APPLE_SERVICE_ID \
   --dart-define=IS_WEB=true
 
 # List build output
