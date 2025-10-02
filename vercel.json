@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "chmod +x build.sh && ./build.sh",
-  "outputDirectory": "flutter_application/build/web",
+  "outputDirectory": "build/web",
   "routes": [
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
