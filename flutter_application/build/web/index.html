@@ -1,0 +1,203 @@
+<!DOCTYPE html><html><head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="BetterFit - Your AI-powered fitness companion with intelligent onboarding and personalized workout plans.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="BetterFit">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <title>BetterFit - AI-Powered Fitness Companion</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "2477996079";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer=""></script>
+  
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  
+  
+  
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <style id="splash-screen-style">
+    html {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      background-color: #000000;
+          background-size: 100% 100%;
+    }
+
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .contain {
+      display:block;
+      width:100%; height:100%;
+      object-fit: contain;
+    }
+
+    .stretch {
+      display:block;
+      width:100%; height:100%;
+    }
+
+    .cover {
+      display:block;
+      width:100%; height:100%;
+      object-fit: cover;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+
+    .bottomLeft {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .bottomRight {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #003971;
+          }
+    }
+  </style>
+  <script id="splash-screen-script">
+    function removeSplashFromWeb() {
+      document.getElementById("splash")?.remove();
+      document.getElementById("splash-branding")?.remove();
+      document.body.style.background = "transparent";
+    }
+  </script>
+</head>
+<body>
+  <picture id="splash">
+      <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+      <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+      <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+  </picture>
+  <div id="loading-screen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+    <div style="color: white; font-family: Arial, sans-serif; font-size: 32px; margin-bottom: 20px; font-weight: bold;">BetterFit</div>
+    <div style="color: white; font-family: Arial, sans-serif; font-size: 16px; margin-bottom: 30px;">Loading...</div>
+    <div style="width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.3); border-top: 4px solid white; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+  </div>
+  
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
+  
+  <script>
+    console.log('Page loaded, starting Flutter initialization...');
+    
+    window.addEventListener('load', function(ev) {
+      console.log('Window load event fired');
+      
+      // Check if Flutter loader is available
+      if (typeof _flutter === 'undefined') {
+        console.error('Flutter loader not found!');
+        document.getElementById('loading-screen').innerHTML = 
+          '<div style="color: white; text-align: center; padding: 20px;">' +
+          '<h2>Flutter Loader Error</h2>' +
+          '<p>Flutter loader not found. Check if flutter.js is loaded.</p>' +
+          '<button onclick="location.reload()" style="padding: 10px 20px; background: white; color: black; border: none; border-radius: 5px; cursor: pointer;">Refresh</button>' +
+          '</div>';
+        return;
+      }
+      
+      console.log('Flutter loader found, loading entrypoint...');
+      
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          console.log('Entrypoint loaded, initializing engine...');
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            console.log('Engine initialized, running app...');
+            appRunner.runApp().then(function() {
+              console.log('App started successfully, hiding loading screen...');
+              // Hide loading screen when app is ready
+              document.getElementById('loading-screen').style.display = 'none';
+            }).catch(function(error) {
+              console.error('Failed to run app:', error);
+              document.getElementById('loading-screen').innerHTML = 
+                '<div style="color: white; text-align: center; padding: 20px;">' +
+                '<h2>App Run Error</h2>' +
+                '<p>Failed to run the app: ' + error.message + '</p>' +
+                '<button onclick="location.reload()" style="padding: 10px 20px; background: white; color: black; border: none; border-radius: 5px; cursor: pointer;">Refresh</button>' +
+                '</div>';
+            });
+          }).catch(function(error) {
+            console.error('Failed to initialize Flutter app:', error);
+            // Show error message
+            document.getElementById('loading-screen').innerHTML = 
+              '<div style="color: white; text-align: center; padding: 20px;">' +
+              '<h2>Loading Error</h2>' +
+              '<p>Failed to load the app: ' + error.message + '</p>' +
+              '<button onclick="location.reload()" style="padding: 10px 20px; background: white; color: black; border: none; border-radius: 5px; cursor: pointer;">Refresh</button>' +
+              '</div>';
+          });
+        }
+      });
+    });
+  </script>
+
+
+</body></html>

@@ -1,0 +1,8 @@
+[33m2710874[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix Vercel configuration: replace ** wildcards with :path* syntax
+[33m92f3680[m Add Vercel deployment documentation and Flutter installation script
+[33m2ea33a7[m feat: Add social login support and update domain to app.betterfitai.com
+[33m6f4b158[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Completely disable service worker and add dummy .env file to prevent 404 errors
+[33m589940a[m Fix Flutter web deployment issues: disable service worker and improve build configuration
+[33m9125ef9[m Fix outputDirectory path in vercel.json to match build script output
+[33mef43997[m Remove framework field from vercel.json to fix schema validation
+[33mad36b3e[m Fix vercel.json buildCommand length issue by moving to separate build script

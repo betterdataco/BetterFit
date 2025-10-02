@@ -1,0 +1,5 @@
+[33m2f20cf9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix web deployment: prevent .env file loading on web builds
+[33m4a353d4[m Fix Vercel deployment loading issue and database setup
+[33m9adc8b9[m Update all logos and icons to use correct BetterFit golden BF logo
+[33mc6264f9[m Update favicon and loading screen to use correct BetterFit logo
+[33m90c18e6[m Fix favicon and loading screen to show BetterFit logo instead of Flutter default
