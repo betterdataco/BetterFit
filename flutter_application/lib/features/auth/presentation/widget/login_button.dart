@@ -18,12 +18,13 @@ class LoginButton extends StatelessWidget {
             ? const CenteredCircularProgressIndicator()
             : ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFFFD700), // Gold color
-                  foregroundColor: Colors.black,
-                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                  backgroundColor: Colors.blue[600],
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(8),
                   ),
+                  elevation: 0,
                 ),
                 onPressed: state.isValid
                     ? () {
@@ -32,9 +33,9 @@ class LoginButton extends StatelessWidget {
                       }
                     : null,
                 child: const Text(
-                  'Continue',
+                  'Sign in',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
                 ),

@@ -13,40 +13,101 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormWrapper(
-      child: Align(
-        alignment: const Alignment(0, -1 / 3),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const LoginEmailInput(),
+          const SizedBox(height: 16),
+          const LoginButton(),
+          const SizedBox(height: 16),
+          
+          // Divider with "or"
+          Row(
             children: [
-              Center(
+              const Expanded(child: Divider()),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  "Let's get started!",
-                  style: context.textTheme.displayLarge?.copyWith(
-                    color: Colors.white,
+                  'or',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 14,
                   ),
-                  softWrap: true,
-                  textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: Spacing.s8),
-              Center(
-                child: Text(
-                  "Enter your email address to sign up or log in.",
-                  style: context.textTheme.displayMedium?.copyWith(
-                    color: Colors.grey[300],
-                  ),
-                  softWrap: true,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: Spacing.s48),
-              const LoginEmailInput(),
-              const SizedBox(height: Spacing.s16),
-              const LoginButton(),
+              const Expanded(child: Divider()),
             ],
           ),
+          const SizedBox(height: 16),
+          
+          // Google Sign In Button
+          _buildGoogleSignInButton(context),
+          const SizedBox(height: 24),
+          
+          // Sign up link
+          _buildSignUpLink(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGoogleSignInButton(BuildContext context) {
+    return OutlinedButton(
+      onPressed: () {
+        // TODO: Implement Google sign in
+      },
+      style: OutlinedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        side: BorderSide(color: Colors.grey[300]!),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 20,
+            height: 20,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://developers.google.com/identity/images/g-logo.png',
+                ),
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Text(
+            'Continue with Google',
+            style: TextStyle(
+              color: Colors.black87,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSignUpLink(BuildContext context) {
+    return Center(
+      child: RichText(
+        text: TextSpan(
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: Colors.grey[600],
+          ),
+          children: [
+            const TextSpan(text: "Don't have an account? "),
+            TextSpan(
+              text: 'Sign up here',
+              style: TextStyle(
+                color: Colors.blue[600],
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
         ),
       ),
     );
