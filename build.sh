@@ -19,8 +19,12 @@ flutter --version
 flutter clean
 flutter pub get
 
-# Build for web
-flutter build web --release
+# Build for web with environment variables
+flutter build web --release \
+  --dart-define=SUPABASE_URL=$SUPABASE_URL \
+  --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY \
+  --dart-define=USDA_FOOD_DATA_API_KEY=$USDA_FOOD_DATA_API_KEY \
+  --dart-define=IS_WEB=true
 
 # List build output
 echo '--- build/web ---'
