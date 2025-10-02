@@ -20,7 +20,7 @@ flutter clean
 flutter pub get
 
 # Build for web
-flutter build web --release --dart-define=API_URL=https://api.yourdomain.com
+flutter build web --release
 
 # List build output
 echo '--- build/web ---'
